@@ -34,7 +34,7 @@ public class FindNotes implements Command {
         if (command.equals("FIND_NOTES_BY_CONTENT")) {
             String note = req.getSearchingContent();
             try {
-                nbService.findNotesByContent(note);
+                response.setDetectednotes(nbService.findNotesByContent(note));
             } catch (ServiceException e) {
                 throw new CommandException();
             }
@@ -42,7 +42,7 @@ public class FindNotes implements Command {
         } else {
             String date = req.getSearchingDate();
             try {
-                nbService.findNotesByDate(date);
+                response.setDetectednotes(nbService.findNotesByDate(date));
             } catch (ServiceException e) {
                 throw new CommandException();
             }
